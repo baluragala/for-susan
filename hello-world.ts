@@ -1,8 +1,8 @@
-var username = 'baluragla';
+var username = "baluragla";
 console.log(username);
 
 function upper(data) {
-    return data.toUpperCase();
+  return data.toUpperCase();
 }
 
 console.log(upper(username));

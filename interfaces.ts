@@ -1,8 +1,8 @@
 interface Course {
-    title:string,
-    desc:string,
-    price:number,
-    discount?:number
+    title:string;
+    desc:string;
+    price:number;
+    discount?:number;
 }
 
 // class Course1{

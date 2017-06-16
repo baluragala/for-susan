@@ -3,9 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { CoursePreviewComponent } from './course-preview.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CoursePreviewComponent
   ],
   imports: [
     BrowserModule

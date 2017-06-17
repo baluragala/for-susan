@@ -1,4 +1,5 @@
-import { Component, ViewEncapsulation, Input } from "@angular/core";
+import { Component, ViewEncapsulation, Input, EventEmitter, Output } from "@angular/core";
+import { Course } from "./course.interface";
 /*
 1. Template
 2. Class
@@ -7,42 +8,38 @@ import { Component, ViewEncapsulation, Input } from "@angular/core";
 
 @Component({
   selector: "app-course-preview",
-  template: `<div (click)="changeClass()">
-    <h3 [class]='className' id="hdr">{{ price }}</h3>
-    <p class='desc'>{{desc}}</p>
-</div>`,
-  styles: [
-    `.header{
-    color:purple
-}
- `
- ,
-    `
- .desc {
-     color: maroon
- }
- `,
- `.subheader{
-    color:red
-}
- `
-  ]
+  templateUrl: './course-preview.component.html',
+  styleUrls: ['./course-preview.component.css']
 })
 export class CoursePreviewComponent {
   title: string = "Vue.js, emerging client side library";
   desc: string = "An open source front end app library";
-  price:number = 100;
+  price: number = 100;
 
+  @Input() course: Course;
 
-  @Input('customClassName')className:string;
+  @Input("customClassName") className: string;
+  courseTitles: string[] = ["angular", "react", "vue.js"];
 
-  courseTitles:string[] = ['angular','react','vue.js']
-  course = {
-    title: this.title,
-    desc: this.desc
-  };
+  @Output() onEnroll:EventEmitter<string> = new EventEmitter();
+ 
+  changeClass() {
+    this.className = "header";
+  }
 
-  changeClass(){
-      this.className = 'header';
+  onCourseEnrollClick(x:string){
+    //alert('You have enrolled for :' + x);
+    this.onEnroll.emit(x);
   }
 }
+
+
+// function printCourse(course:Course){
+//   console.log(' Title : ' + course.title);
+// }
+
+
+
+// printCourse({id:1,title:'angular', desc:'by google'})
+// printCourse({id:2,title:'react', desc:'by fb'})
+// printCourse({id:3,title:'vue', desc:'by comm'})

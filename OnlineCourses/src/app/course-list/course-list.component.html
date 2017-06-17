@@ -1,0 +1,9 @@
+<div>
+  <h2>Courses</h2> 
+  <h5> Enrolled Courses :  {{ enrolledCourses.toString() }} </h5>
+  <app-course-preview [course]="courses[0]" (onEnroll)="onEnrollRequest($event)"></app-course-preview>
+  <app-course-preview [course]="courses[1]" (onEnroll)="onEnrollRequest($event)"></app-course-preview>
+  <app-course-preview [course]="courses[2]" (onEnroll)="onEnrollRequest($event)"></app-course-preview>
+  <app-course-preview [course]="courses[3]" (onEnroll)="onEnrollRequest($event)"></app-course-preview> 
+  
+</div>

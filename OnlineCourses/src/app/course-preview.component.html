@@ -1,4 +1,5 @@
-<div>
-    <h3>{{title}}</h3>
-    <p>{{desc}}</p>
+<div (click)="changeClass()" class='course'>
+    <h1 [class]='className' id="hdr">{{ course.title }}</h1>
+    <p class='desc'>{{course.desc}}</p>
+    <button class="btn btn-success" (click)="onCourseEnrollClick(course.title)">Enroll</button>
 </div>

@@ -1,3 +1,18 @@
-h3 {
-    color: crimson
+.header {
+  color: purple;
+}
+.desc {
+  color: maroon;
+}
+.subheader {
+  color: red;
+}
+.course {
+  background-color: lightgray;
+  width: 90%;
+  height: 180px;
+  box-shadow: 2px 2px 2px #888888;
+  margin: 0 auto;
+  padding: 20px;
+  margin-bottom: 10px;
 }

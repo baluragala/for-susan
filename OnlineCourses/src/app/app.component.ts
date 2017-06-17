@@ -7,7 +7,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.Emulated
 })
 export class AppComponent {
-  title = 'Hello World Angular2';
+  title = 'OnlineCourses App';
   className="header"
 
   changeClass(){

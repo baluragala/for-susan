@@ -1,5 +1,6 @@
-<div style="border:1px solid orange; margin: 5px; padding: 10px">
-    <h1>{{product.name}}</h1>
-    <h3>{{product.price}}</h3>
-    <button class="add-to-cart" (click)="onAddToCartClicked()">Add To Cart</button>
+<div [ngClass]="currentClass">
+    <h1>{{product.name | uppercase }}</h1>
+    <h3>{{product.price | mypower:2 | currency:'INR':true:'3.2-2' }}</h3>
+    <button *ngIf="!product.isAddedToCart" class="add-to-cart" (click)="onAddToCartClicked(product)">Add To Cart</button>
+    <button *ngIf="product.isAddedToCart" class="remove-from-cart" (click)="onAddToCartClicked(product)">Remove From Cart</button>
 </div>

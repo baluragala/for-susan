@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductListItemComponent } from './product-list-item/product-list-item.component';
+import { PowerPipe } from './power.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     CartComponent,
     ProductListComponent,
-    ProductListItemComponent
+    ProductListItemComponent,
+    PowerPipe
   ],
   imports: [
     BrowserModule

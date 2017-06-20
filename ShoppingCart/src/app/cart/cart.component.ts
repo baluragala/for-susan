@@ -8,11 +8,14 @@ import { Product } from "../product.interface";
 })
 export class CartComponent implements OnInit {
   cart: Product[] = [];
+  totalPrice:number = 0;
+
   constructor() {}
 
   ngOnInit() {}
 
   addProduct(product: Product) {
     this.cart.push(product)
+    this.totalPrice += product.price;
   }
 }

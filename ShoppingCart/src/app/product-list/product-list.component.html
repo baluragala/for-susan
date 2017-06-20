@@ -1,6 +1,9 @@
 <h3> Products </h3>
-<app-product-list-item [product]="products[0]" (onAddToCart)="onAddToCartEvent($event)"></app-product-list-item>
+
+<app-product-list-item *ngFor="let currentProduct of products" [product]="currentProduct" (onAddToCart)="onAddToCartEvent($event)">
+</app-product-list-item>
+<!--<app-product-list-item [product]="products[0]" (onAddToCart)="onAddToCartEvent($event)"></app-product-list-item>
 <app-product-list-item [product]="products[1]" (onAddToCart)="onAddToCartEvent($event)"></app-product-list-item>
 <app-product-list-item [product]="products[2]" (onAddToCart)="onAddToCartEvent($event)"></app-product-list-item>
 <app-product-list-item [product]="products[3]" (onAddToCart)="onAddToCartEvent($event)"></app-product-list-item>
-<app-product-list-item [product]="products[4]" (onAddToCart)="onAddToCartEvent($event)"></app-product-list-item>
+<app-product-list-item [product]="products[4]" (onAddToCart)="onAddToCartEvent($event)"></app-product-list-item>-->

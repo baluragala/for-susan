@@ -1,8 +1,29 @@
 .add-to-cart {
-    background-color: crimson;
+    background-color: green;
     color:papayawhip;
     font-size: 1.2em;
     width: 150px;
-    height: 80px;
+    height: 40px;
     border-radius: 15px;
+}
+
+.remove-from-cart {
+    background-color: crimson;
+    color:papayawhip;
+    font-size: 1.2em;
+    width: 250px;
+    height: 40px;
+    border-radius: 15px;
+}
+
+.add {
+    border:1px solid green;
+    margin: 5px;
+    padding: 10px;
+}
+
+.remove {
+    border:2px solid crimson;
+    margin: 5px;
+    padding: 10px;
 }

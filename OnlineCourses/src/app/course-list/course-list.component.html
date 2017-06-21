@@ -1,9 +1,8 @@
 <div>
-  <h2>Courses</h2> 
-  <h5> Enrolled Courses :  {{ enrolledCourses.toString() }} </h5>
-  <app-course-preview [course]="courses[0]" (onEnroll)="onEnrollRequest($event)"></app-course-preview>
-  <app-course-preview [course]="courses[1]" (onEnroll)="onEnrollRequest($event)"></app-course-preview>
-  <app-course-preview [course]="courses[2]" (onEnroll)="onEnrollRequest($event)"></app-course-preview>
-  <app-course-preview [course]="courses[3]" (onEnroll)="onEnrollRequest($event)"></app-course-preview> 
-  
+  <h2>Courses</h2>
+  <h5> Enrolled Courses : {{ enrolledCourses.toString() }} </h5>
+  <div *ngIf="isDataFetched">
+    <app-course-preview *ngFor="let course of courses" [course]="course" (onEnroll)="onEnrollRequest($event)"></app-course-preview>
+  </div>
+  <h1 *ngIf="!isDataFetched">Loading...</h1>
 </div>

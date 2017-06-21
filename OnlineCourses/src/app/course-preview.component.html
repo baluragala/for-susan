@@ -1,5 +1,8 @@
-<div (click)="changeClass()" class='course'>
-    <h1 [class]='className' id="hdr">{{ course.title }}</h1>
-    <p class='desc'>{{course.desc}}</p>
-    <button class="btn btn-success" (click)="onCourseEnrollClick(course.title)">Enroll</button>
-</div>
+<!-- /courses/1-->
+<a [routerLink]="[course.id]">
+    <div class='course'>
+        <h1 [class]='className' id="hdr">{{ course.title }}</h1>
+        <p class='desc'>{{course.desc}}</p>
+        <button class="btn btn-success" (click)="onCourseEnrollClick(course.title)">Enroll</button>
+    </div>
+</a>

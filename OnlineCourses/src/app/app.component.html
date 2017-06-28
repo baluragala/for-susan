@@ -4,6 +4,9 @@
     Welcome to {{title}}!!
   </h1>
 </header>
+<label [title]="title" [class]="'active'">
+  <input type="radio"/>{{title}}
+</label>
 <ul>
   <li><a [routerLink]="'/home'" routerLinkActive="active">Home</a></li>  
   <li><a [routerLink]="'/courses'" routerLinkActive="active">Courses</a></li>

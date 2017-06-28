@@ -3,3 +3,5 @@
 <p>{{desc}}</p>
 <button class="btn btn-primary" (click)="goToCourses()">Back</button>
 <a [routerLink]="['/courses']">Courses</a>
+
+{{ course | json }}

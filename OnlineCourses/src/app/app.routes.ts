@@ -1,3 +1,5 @@
+import { AddUserComponent } from './add-user/add-user.component';
+import { AddCourseComponent } from './add-course/add-course.component';
 import { CourseActiveGaurdService } from './course-active-gaurd.service';
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { CourseDetailComponent } from "./course-detail/course-detail.component";
@@ -18,6 +20,14 @@ export const APP_ROUTES: Route[] = [
     path: "courses/:courseId",
     component: CourseDetailComponent,
     canActivate: [CourseActiveGaurdService]
+  },
+  {
+    path: "add-course",
+    component: AddCourseComponent,
+  },
+  {
+    path: "add-user",
+    component: AddUserComponent,
   },
   {
     path: "**",

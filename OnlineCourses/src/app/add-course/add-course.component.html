@@ -1,0 +1,27 @@
+<div class="conatiner">
+  <form #form="ngForm" (submit)="saveForm(form)">
+    <div class="form-group">
+      <label>Title:</label>
+      <input type="text" class="form-control" name="title"
+      #courseTitle="ngModel"
+      [(ngModel)]="course.title"
+      required minlength="3" maxlength="100">
+    </div>
+    <p class="error" *ngIf="!courseTitle.valid && courseTitle.dirty">Title is required and must be of lenght between 3 and 100</p>
+    <p class="error" *ngIf="invalidTitle">Title is {{course.title}} is not valid</p>
+    <div class="form-group">
+      <label>Desc:</label>
+      <textarea class="form-control" 
+      #courseDesc="ngModel"
+      [(ngModel)]="course.desc" name="desc"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Price:</label>
+      <input type="number" 
+      #coursePrice="ngModel"
+      [(ngModel)]="course.price"
+      min="100" max="1000" step="50" class="form-control" ngModel name="price" required>
+    </div>
+    <input type="submit" value="ADD" class="btn btn-success" [disabled]="!form.valid">
+  </form>
+</div>

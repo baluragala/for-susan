@@ -1,8 +1,7 @@
-import { Courses2Service } from './../courses2.service';
-import { CoursesService } from './../courses.service';
+import { Courses2Service } from "./../courses2.service";
+import { CoursesService } from "./../courses.service";
 import { Component, OnInit, Inject } from "@angular/core";
 import { Course } from "../course.interface";
-
 
 @Component({
   selector: "app-course-list",
@@ -12,21 +11,22 @@ import { Course } from "../course.interface";
 export class CourseListComponent implements OnInit {
   courses: Course[];
   enrolledCourses: string[] = [];
-  isDataFetched:boolean=false;
-  
+  isDataFetched: boolean = false;
 
-  constructor(private coursesService:CoursesService /*CoursesService*/,
-  @Inject("API_KEY") private keyApi:string) {
-    console.log(coursesService,typeof(keyApi));
-    console.log('CourseListComponent', 'apiKey :' + this.keyApi);
-    
+  constructor(
+    private coursesService: CoursesService /*CoursesService*/,
+    @Inject("API_KEY") private keyApi: string
+  ) {
+    console.log(coursesService, typeof keyApi);
+    console.log("CourseListComponent", "apiKey :" + this.keyApi);
   }
 
   ngOnInit() {
-
     setTimeout(() => {
       this.isDataFetched = true;
-      this.courses = this.coursesService.getCourses();
+      this.coursesService
+        .getCourses()
+        .subscribe(courses => (this.courses = courses));
     }, 2000);
   }
 

@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild } from "@angular/core";
 
 @Component({
   selector: 'app-root',
@@ -9,8 +9,17 @@ import { Component, ViewEncapsulation } from '@angular/core';
 export class AppComponent {
   title = 'OnlineCourses App';
   className="header"
+  @ViewChild('header') header;
 
   changeClass(){
     this.className = 'subheader'
+  }
+
+  ngDoCheck(){
+    //console.log(this.header.nativeElement.innerText);
+  }
+
+  email(header){
+    console.log(this.header.nativeElement.innerText)
   }
 }
